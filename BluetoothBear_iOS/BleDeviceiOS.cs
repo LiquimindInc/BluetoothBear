@@ -85,9 +85,9 @@ namespace BluetoothBear
                 return;
 
             if (e.Error == null)
-                OnCharacteristicChanged(this, new BleCharacteristicChangedEventArgs(e.Characteristic, e.Characteristic.Value.ToArray(),  BleGattOperationState.Success));
+                OnCharacteristicChanged(this, new BleCharacteristicChangedEventArgs(e.Characteristic, e.Characteristic.Value.ToArray(), BleGattOperationState.Success));
             else
-                OnCharacteristicChanged(this, new BleCharacteristicChangedEventArgs(e.Characteristic, e.Characteristic.Value.ToArray() ,BleGattOperationState.Failure));
+                OnCharacteristicChanged(this, new BleCharacteristicChangedEventArgs(e.Characteristic, e.Characteristic.Value.ToArray(), BleGattOperationState.Failure));
         }
 
         private void HandleRssiUpdated(object sender, NSErrorEventArgs e)
