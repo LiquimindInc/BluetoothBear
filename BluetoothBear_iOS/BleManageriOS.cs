@@ -84,8 +84,7 @@ namespace BluetoothBear
 
             DiscoveredDevices.Clear();
             CentralManager.ScanForPeripherals(new CBUUID[] { });
-            //CBPeripheral[] peripherals = CentralManager.RetrieveConnectedPeripherals (new CBUUID[] { });
-            CentralManager.RetrievePeripherals((CBUUID)null);
+          
         }
 
         public void StopBleScan()
