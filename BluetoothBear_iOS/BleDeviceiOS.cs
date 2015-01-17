@@ -85,9 +85,9 @@ namespace BluetoothBear
                 return;
 
             if (e.Error == null)
-                OnCharacteristicChanged(this, new BleCharacteristicChangedEventArgs(e.Characteristic, e.Characteristic.Value.ToArray(),  BleGattOperationState.Success));
+                OnCharacteristicChanged(this, new BleCharacteristicChangedEventArgs(e.Characteristic, e.Characteristic.Value.ToArray(), BleGattOperationState.Success));
             else
-                OnCharacteristicChanged(this, new BleCharacteristicChangedEventArgs(e.Characteristic, e.Characteristic.Value.ToArray() ,BleGattOperationState.Failure));
+                OnCharacteristicChanged(this, new BleCharacteristicChangedEventArgs(e.Characteristic, e.Characteristic.Value.ToArray(), BleGattOperationState.Failure));
         }
 
         private void HandleRssiUpdated(object sender, NSErrorEventArgs e)
@@ -109,7 +109,8 @@ namespace BluetoothBear
                 return;
 
             int servicesCount = peripheral.Services.Length;
-            peripheral.DiscoverCharacteristic += (o, es) =>
+
+            peripheral.DiscoveredCharacteristic += (o, es) =>
             {
                 servicesCount--;
                 if (servicesCount == 0)
