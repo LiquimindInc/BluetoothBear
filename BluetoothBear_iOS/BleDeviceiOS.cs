@@ -109,7 +109,7 @@ namespace BluetoothBear
                 return;
 
             int servicesCount = peripheral.Services.Length;
-            peripheral.DiscoverCharacteristic += (o, es) =>
+            peripheral.DiscoveredCharacteristic += (o, es) =>
             {
                 servicesCount--;
                 if (servicesCount == 0)
