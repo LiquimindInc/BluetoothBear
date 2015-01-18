@@ -37,7 +37,6 @@
   <ItemGroup>
     <Compile Include="BleDeviceiOS.cs" />
     <Compile Include="BleManageriOS.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

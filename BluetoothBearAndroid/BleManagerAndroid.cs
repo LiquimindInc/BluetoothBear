@@ -59,6 +59,13 @@ namespace BluetoothBear
         }
 
 
+        private static DateTime currentDateTime; 
+
+        public static void Initialize()
+        {
+            currentDateTime = DateTime.Now;
+        }
+
         public BleManagerAndroid()
         {
             if (bluetoothManager == null)

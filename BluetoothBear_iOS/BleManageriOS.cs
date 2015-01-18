@@ -13,8 +13,15 @@ using Foundation;
 [assembly: Xamarin.Forms.Dependency(typeof(BluetoothBear.BleManageriOS))]
 namespace BluetoothBear
 {
-    public sealed class BleManageriOS : CBCentralManagerDelegate, IBleManager
+    public class BleManageriOS : CBCentralManagerDelegate, IBleManager
     {
+
+        private static DateTime currentDateTime; 
+
+        public static void Initialize()
+        {
+            currentDateTime = DateTime.Now;
+        }
 
         public event BleDeviceFoundEventHandler BleDeviceFound;
 
